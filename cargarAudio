@@ -1,0 +1,23 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 31 19:41:18 2019
+
+@author: juan
+"""
+
+import numpy as np
+import matplotlib.pyplot as plt
+from wav_rw import wavread
+from scipy.fftpack import fft
+
+lista='data/lista_audio.txt'
+hf=open(lista,'r')
+lines=hf.readlines()
+hf.close()
+
+audio,label=lines[0].split('\t')
+(r,s)=wavread(audio)
+plt.plot(s)
+
+mfcc(signal,samplerate=16000,winlen=0.025,winstep=0.01,numcep=13,nfilt=26,nfft=512,lowfreq=0,highfreq=None,preemph=0.97,ceplifter=22,appendEnergy=True)
